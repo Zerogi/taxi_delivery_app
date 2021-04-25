@@ -5,62 +5,100 @@ import 'package:flutter/services.dart';
 void main() => runApp(LogInScreen());
 
 class LogInScreen extends StatelessWidget {
-  final _sizeTextBlack = const TextStyle(fontSize: 20.0, color: Colors.black);
-  final _sizeTextWhite = const TextStyle(fontSize: 20.0, color: Colors.white);
+
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
       home: new Scaffold(
-        body: new Center(
-            child: new Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                new Container(
-                  child: Text(
-                    "Введите свой номер телефона",
-                    textAlign: TextAlign.center,
-                    style: _sizeTextBlack,
-                  ),
-                  padding: new EdgeInsets.only(top: 10),
-                ),
-                new Container(
-                  child: DropdownExample(),
-                  width: 300.0,
-                  padding: new EdgeInsets.only(top: 50),
-                ),
-                new Container(
-                  child: new TextFormField(
-                    textAlign: TextAlign.center,
-                    decoration: new InputDecoration(
-                        labelText: "+XXX XXX XX-XX-XX",
-                      labelStyle: TextStyle(color: Colors.grey),
-                      enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.redAccent,width: 5),
-                      borderRadius: BorderRadius.circular(10))
-                    ),
-                    style: _sizeTextBlack,
-                    keyboardType: TextInputType.phone,
-                  ),
-                  width: 1000.0,
-                  padding: new EdgeInsets.only(top: 10.0),
-                ),
-                new Container(
-                  padding: new EdgeInsets.only(top: 400.0),
-                  child: new MaterialButton(
-                    disabledColor: Colors.redAccent,
-                    textColor: Colors.white,
-                    height: 50.0,
-                    minWidth: 1000.0,
-                    child: new Text(
-                      "Далее",
-                      style: _sizeTextWhite,
-                    ),
-                  ),
-                )
-              ],
+        body: new Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            Flexible(
+              flex:1,
+              fit:FlexFit.tight,
+              child: Container(),
             ),
+            Flexible(
+              flex:1,
+              fit:FlexFit.tight,
+              child: FractionallySizedBox(
+                widthFactor: 0.3,
+                child: Container(child: FittedBox(fit: BoxFit.cover,
+                                                  child: Text("Введите свой номер телефона",
+                                                         textAlign: TextAlign.center,
+                                                         style: TextStyle(color: Colors.black87),),),),),),
+            Flexible(
+              flex:1,
+              fit:FlexFit.tight,
+              child: Container(),
+            ),
+            Flexible(
+              flex:2,
+              fit:FlexFit.tight,
+              child: FractionallySizedBox(widthFactor: 0.3,
+                child: DropdownExample(),),),
+            Flexible(
+              flex:1,
+              fit:FlexFit.tight,
+              child: Container(),
+            ),
+            Flexible(
+              flex:3,
+              fit:FlexFit.tight,
+              child: FractionallySizedBox(widthFactor: 0.8,
+                child:TextFormField(
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.black87,fontSize: 30),
+                keyboardType: TextInputType.phone,
+                decoration: new InputDecoration(hintText: "+XXX XXX XX-XX-XX",
+                                                hintStyle: TextStyle(fontSize: 30,color: Colors.grey),
+                                                enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.redAccent, width: 5),
+                                                                                                           borderRadius: BorderRadius.circular(10.0))),),),),
+            Flexible(
+              flex:17,
+              fit:FlexFit.tight,
+              child: Container(),
+            ),
+            Flexible(
+              flex:1,
+              fit:FlexFit.tight,
+              child: FractionallySizedBox(
+                widthFactor: 0.3,
+                child: Container(child: FittedBox(fit: BoxFit.cover,
+                  child: Text.rich(TextSpan(
+                    text: 'Нажимая кнопку \"Далее\", вы принимаете условия\n',
+                      children: <TextSpan>[
+                        TextSpan(text: ' Пользовательского соглашения ', style: TextStyle(decoration: TextDecoration.underline)),
+                        TextSpan(text: 'и'),
+                        TextSpan(text: ' Политики\n конфиденциальности', style: TextStyle(decoration: TextDecoration.underline)),],),
+                    textAlign:TextAlign.center,
+                    style:TextStyle(color:Colors.grey),),),),),),
+            Flexible(
+              flex:1,
+              fit:FlexFit.tight,
+              child: Container(),
+            ),
+            Flexible(
+              flex:2,
+              fit:FlexFit.tight,
+              child: FractionallySizedBox(widthFactor: 0.8,
+                child:MaterialButton(
+                disabledColor: Colors.grey,
+                disabledTextColor: Colors.black87,
+                color: Colors.redAccent,
+                textColor: Colors.white,
+                minWidth: double.infinity,
+                child: new Text("Далее",
+                  style: TextStyle(color: Colors.white,fontSize: 20),),
+                onPressed: (){},),),),
+            Flexible(
+              flex:1,
+              fit:FlexFit.tight,
+              child: Container(),
+            ),
+          ],
+          ),
         ),
-      ),
     );
   }
 }
@@ -85,7 +123,6 @@ class _DropdownExampleState extends State<DropdownExample> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                SizedBox(width: 10),
                 Text("Украина +380"),
               ],
             ),
@@ -95,17 +132,6 @@ class _DropdownExampleState extends State<DropdownExample> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                SizedBox(width: 10),
-                Text("Россия +7"),
-              ],
-            ),
-          ),
-          DropdownMenuItem<String>(
-            value: "3",
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                SizedBox(width: 10),
                 Text("Беларусь +375"),
               ],
             ),
@@ -118,6 +144,7 @@ class _DropdownExampleState extends State<DropdownExample> {
         },
         value: _value,
         isExpanded: true,
+        hint: Text("Выберите страну",style: TextStyle(color: Colors.black87,fontSize: 20),textAlign: TextAlign.center,),
       ),
     );
   }
