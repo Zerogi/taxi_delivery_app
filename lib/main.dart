@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-void main() => runApp(LogInScreen());
+import 'package:taxi_delivery_app/screens/CheckCodeScreen.dart';
 
 class LogInScreen extends StatelessWidget {
 
@@ -35,7 +34,7 @@ class LogInScreen extends StatelessWidget {
             Flexible(
               flex:2,
               fit:FlexFit.tight,
-              child: FractionallySizedBox(widthFactor: 0.3,
+              child: FractionallySizedBox(widthFactor: 0.5,
                 child: DropdownExample(),),),
             Flexible(
               flex:1,
@@ -60,7 +59,7 @@ class LogInScreen extends StatelessWidget {
               child: Container(),
             ),
             Flexible(
-              flex:1,
+              flex:3,
               fit:FlexFit.tight,
               child: FractionallySizedBox(
                 widthFactor: 0.3,
@@ -90,7 +89,11 @@ class LogInScreen extends StatelessWidget {
                 minWidth: double.infinity,
                 child: new Text("Далее",
                   style: TextStyle(color: Colors.white,fontSize: 20),),
-                onPressed: (){},),),),
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context)=>CheckCode()));
+                },),),),
             Flexible(
               flex:1,
               fit:FlexFit.tight,
@@ -148,4 +151,12 @@ class _DropdownExampleState extends State<DropdownExample> {
       ),
     );
   }
+}
+
+void main(){
+  runApp(
+      MaterialApp(
+        home:LogInScreen(),
+)
+);
 }
