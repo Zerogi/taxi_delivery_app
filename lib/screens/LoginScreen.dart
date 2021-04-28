@@ -21,7 +21,7 @@ class LogIn extends StatelessWidget {
               flex:1,
               fit:FlexFit.tight,
               child: FractionallySizedBox(
-                widthFactor: 0.3,
+                widthFactor: 0.8,
                 child: Container(child: FittedBox(fit: BoxFit.contain,
                   child: Text("Введите свой номер телефона",
                     textAlign: TextAlign.center,
@@ -47,7 +47,7 @@ class LogIn extends StatelessWidget {
               child: FractionallySizedBox(widthFactor: 0.8,
                 child:TextFormField(
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.black87,fontSize: 30),
+                  style: TextStyle(color: Colors.black87,fontSize: 20),
                   keyboardType: TextInputType.phone,
                   decoration: new InputDecoration(hintText: "+XXX XXX XX-XX-XX",
                       hintStyle: TextStyle(fontSize: 20,color: Colors.grey),
