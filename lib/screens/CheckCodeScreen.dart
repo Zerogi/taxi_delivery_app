@@ -21,10 +21,10 @@ class CheckCode extends StatelessWidget{
               fit:FlexFit.tight,
               child: FractionallySizedBox(
                 widthFactor: 0.3,
-                child: Container(child: FittedBox(fit: BoxFit.cover,
+                child: Container(child: FittedBox(fit: BoxFit.contain,
                   child: Text("Введите код из смс",
                     textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.black87),),),),),),
+                    style: TextStyle(color: Colors.black87)))))),
             Flexible(
               flex:1,
               fit:FlexFit.tight,
@@ -92,11 +92,11 @@ class CheckCode extends StatelessWidget{
               flex:1,
               fit:FlexFit.tight,
               child: FractionallySizedBox(
-                widthFactor: 0.3,
-                child: Container(child: FittedBox(fit: BoxFit.cover,
+                widthFactor: 0.8,
+                child: Container(child: FittedBox(fit: BoxFit.contain,
                   child: Text("Получить новый код можно через 60 сек.",
                     textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.grey),),),),),),
+                    style: TextStyle(color: Colors.grey)))))),
             Flexible(
               flex:1,
               fit:FlexFit.tight,
