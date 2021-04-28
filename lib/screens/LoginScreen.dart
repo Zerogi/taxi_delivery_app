@@ -53,7 +53,7 @@ class LogIn extends StatelessWidget {
                       hintStyle: TextStyle(fontSize: 20,color: Colors.grey),
                       enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.redAccent, width: 5),
                           borderRadius: BorderRadius.circular(10.0))),
-                onChanged: ,))),
+                ))),
             Flexible(
               flex:17,
               fit:FlexFit.tight,
