@@ -10,6 +10,7 @@ class Login extends StatefulWidget {
 
 class LoginState extends State {
   final _formKey = GlobalKey<FormState>();
+  final _mobileFormatter = NumberTextInputFormatter();
 
   @override
   Widget build(BuildContext context) {
@@ -56,6 +57,11 @@ class LoginState extends State {
                             child:Text("+380",style: TextStyle(color: Colors.black87,letterSpacing: 1),textAlign: TextAlign.center)),
                         Flexible(flex:8,fit: FlexFit.tight,
                             child:TextFormField(
+                                inputFormatters: <TextInputFormatter>[
+                                  WhitelistingTextInputFormatter.digitsOnly,
+                                  _mobileFormatter,
+                                ],
+                                maxLength: 12,
                                 textAlign: TextAlign.start,
                                 style: TextStyle(color: Colors.black87),
                                 keyboardType: TextInputType.phone,
@@ -91,6 +97,40 @@ class LoginState extends State {
           ],
         ),
       ),
+    );
+  }
+}
+
+class NumberTextInputFormatter extends TextInputFormatter {
+  @override
+  TextEditingValue formatEditUpdate(
+      TextEditingValue oldValue, TextEditingValue newValue) {
+    final int newTextLength = newValue.text.length;
+    int selectionIndex = newValue.selection.end;
+    int usedSubstringIndex = 0;
+    final StringBuffer newText = new StringBuffer();
+    if (newTextLength >= 4) {
+      if(newTextLength>=6){
+        if(newTextLength>=8){
+          newText.write(newValue.text.substring(0, 3) + ' '+ newValue.text.substring(3,5)+'-'+
+              newValue.text.substring(5,usedSubstringIndex=7)+'-');
+          if (newValue.selection.end >= 7) selectionIndex += 1;
+        }
+        else{
+          newText.write(newValue.text.substring(0, 3) + ' '+ newValue.text.substring(3,usedSubstringIndex=5)+'-');
+          if (newValue.selection.end >= 5) selectionIndex += 1;
+        }
+      }
+      else{
+        newText.write(newValue.text.substring(0, usedSubstringIndex = 3) + ' ');
+        if (newValue.selection.end >= 3) selectionIndex += 1;
+      }
+    }
+    if (newTextLength >= usedSubstringIndex)
+      newText.write(newValue.text.substring(usedSubstringIndex));
+    return new TextEditingValue(
+      text: newText.toString(),
+      selection: new TextSelection.collapsed(offset: selectionIndex),
     );
   }
 }

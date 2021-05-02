@@ -56,6 +56,7 @@ class CheckCodeState extends State{
                               Flexible(flex:5,fit: FlexFit.tight,
                                   child:TextFormField(
                                       textAlign: TextAlign.center,
+                                      maxLength: 1,
                                       style: TextStyle(color: Colors.black87,fontWeight: FontWeight.bold),
                                       keyboardType: TextInputType.phone,
                                       decoration: InputDecoration(
@@ -65,6 +66,7 @@ class CheckCodeState extends State{
                               Flexible(flex:5,fit: FlexFit.tight,
                                   child:TextFormField(
                                       textAlign: TextAlign.center,
+                                      maxLength: 1,
                                       style: TextStyle(color: Colors.black87,fontWeight: FontWeight.bold),
                                       keyboardType: TextInputType.phone,
                                       decoration: InputDecoration(
@@ -74,6 +76,7 @@ class CheckCodeState extends State{
                               Flexible(flex:5,fit: FlexFit.tight,
                                   child:TextFormField(
                                       textAlign: TextAlign.center,
+                                      maxLength: 1,
                                       style: TextStyle(color: Colors.black87,fontWeight: FontWeight.bold),
                                       keyboardType: TextInputType.phone,
                                       decoration: InputDecoration(
@@ -83,6 +86,7 @@ class CheckCodeState extends State{
                               Flexible(flex:5,fit: FlexFit.tight,
                                   child:TextFormField(
                                       textAlign: TextAlign.center,
+                                      maxLength: 1,
                                       style: TextStyle(color: Colors.black87,fontWeight: FontWeight.bold),
                                       keyboardType: TextInputType.phone,
                                       decoration: InputDecoration(
