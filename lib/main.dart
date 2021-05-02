@@ -7,5 +7,5 @@ import 'package:yandex_mapkit/yandex_mapkit.dart';
 void main(){
   runApp(
       MaterialApp(
-        home:HomePage()));
+        home:Login()));
 }

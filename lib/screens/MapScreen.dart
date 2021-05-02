@@ -4,7 +4,6 @@ import 'package:taxi_delivery_app/screens/LoginScreen.dart';
 import 'package:yandex_mapkit/yandex_mapkit.dart';
 import 'package:taxi_delivery_app/screens/LoginScreen.dart';
 
-
 class HomePage extends StatelessWidget{
   YandexMapController controller;
 
@@ -45,7 +44,7 @@ class HomePage extends StatelessWidget{
                       onPressed: (){
                         Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context)=>LogIn()));
+                            MaterialPageRoute(builder: (context)=>Login()));
                       }
                   ))),
         ],
