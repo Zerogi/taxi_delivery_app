@@ -15,10 +15,11 @@ class CheckCodeState extends State{
   Widget build(BuildContext context) {
     return new MaterialApp(
       home: new Scaffold(
+        resizeToAvoidBottomInset: false,
         body: new Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            Flexible(flex:15, fit:FlexFit.tight, child: Container()),
+            Flexible(flex:8, fit:FlexFit.tight, child: Container()),
             Flexible(
                 flex:1,
                 fit:FlexFit.tight,
@@ -60,6 +61,7 @@ class CheckCodeState extends State{
                                       style: TextStyle(color: Colors.black87,fontWeight: FontWeight.bold),
                                       keyboardType: TextInputType.phone,
                                       decoration: InputDecoration(
+                                          counterText: "",
                                           enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
                                           focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.amber))))),
                               Flexible(flex:1, fit:FlexFit.tight, child: Container()),
@@ -70,6 +72,7 @@ class CheckCodeState extends State{
                                       style: TextStyle(color: Colors.black87,fontWeight: FontWeight.bold),
                                       keyboardType: TextInputType.phone,
                                       decoration: InputDecoration(
+                                          counterText: "",
                                           enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
                                           focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.amber))))),
                               Flexible(flex:1, fit:FlexFit.tight, child: Container()),
@@ -80,6 +83,7 @@ class CheckCodeState extends State{
                                       style: TextStyle(color: Colors.black87,fontWeight: FontWeight.bold),
                                       keyboardType: TextInputType.phone,
                                       decoration: InputDecoration(
+                                          counterText: "",
                                           enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
                                           focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.amber))))),
                               Flexible(flex:1, fit:FlexFit.tight, child: Container()),
@@ -90,12 +94,13 @@ class CheckCodeState extends State{
                                       style: TextStyle(color: Colors.black87,fontWeight: FontWeight.bold),
                                       keyboardType: TextInputType.phone,
                                       decoration: InputDecoration(
+                                          counterText: "",
                                           enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
                                           focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.amber))))),
                               Flexible(flex:1, fit:FlexFit.tight, child: Container()),
                             ]
                         )))),
-            Flexible(flex:15, fit:FlexFit.tight, child: Container()),
+            Flexible(flex:4, fit:FlexFit.tight, child: Container()),
             Flexible(
                 flex:3,
                 fit:FlexFit.tight,
@@ -114,7 +119,7 @@ class CheckCodeState extends State{
                               MaterialPageRoute(builder: (context)=>HomePage()));
                         }
                     ))),
-            Flexible(flex:1, fit:FlexFit.tight, child: Container()),
+            Flexible(flex:19, fit:FlexFit.tight, child: Container()),
           ],
         ),
       ),

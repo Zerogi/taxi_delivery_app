@@ -16,10 +16,11 @@ class LoginState extends State {
   Widget build(BuildContext context) {
     return new MaterialApp(
       home: new Scaffold(
+        resizeToAvoidBottomInset: false,
         body: new Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            Flexible(flex:15, fit:FlexFit.tight, child: Container()),
+            Flexible(flex:8, fit:FlexFit.tight, child: Container()),
             Flexible(
               flex:1,
               fit:FlexFit.tight,
@@ -66,6 +67,7 @@ class LoginState extends State {
                                 style: TextStyle(color: Colors.black87),
                                 keyboardType: TextInputType.phone,
                                 decoration: InputDecoration(hintText: "Номер телефона",
+                                    counterText: "",
                                     hintStyle: TextStyle(color: Colors.grey,letterSpacing: 1),
                                     border: InputBorder.none)))
                       ]
@@ -74,7 +76,7 @@ class LoginState extends State {
                       border: Border.all(color: Colors.amber),
                     borderRadius: BorderRadius.circular(4)
                   )))),
-            Flexible(flex:15, fit:FlexFit.tight, child: Container()),
+            Flexible(flex:4, fit:FlexFit.tight, child: Container()),
             Flexible(
               flex:3,
               fit:FlexFit.tight,
@@ -93,7 +95,7 @@ class LoginState extends State {
                         MaterialPageRoute(builder: (context)=>CheckCode()));
                   }
                   ))),
-            Flexible(flex:1, fit:FlexFit.tight, child: Container()),
+            Flexible(flex:19, fit:FlexFit.tight, child: Container()),
           ],
         ),
       ),
